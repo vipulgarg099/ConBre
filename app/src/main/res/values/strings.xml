@@ -17,4 +17,33 @@
     <string name="title_activity_sign_up_">SignUp_Activity</string>
     <string name="email_hint">Email</string>
     <string name="confirm_password_hint">Confirm Password</string>
+    <string name="signUp_error_message">Please make sure you enter Username, Password and Email.</string>
+    <string name="SignUp_error_tittle">Oops!</string>
+    <string name="signup_incorrect_password_message">Password fields are not matching</string>
+    <string name="incorrect_password_title">Incorrect Password</string>
+    <string name="LogIn_error_message">Please enter both username and password</string>
+    <string name="LogIn_error_tittle">Empty field detected</string>
+    <string name="logOut_title">Logout</string>
+    <string name="inbox_section">Inbox</string>
+    <string name="friends_section">Friends</string>
+    <string name="empty_inbox_label">No New Message</string>
+    <string name="no_friend_label">Add Friends to begin</string>
+    <string name="edit_friends_label">Add Friends</string>
+    <string name="title_activity_edit_friends">EditFriendsActivity</string>
+    <string name="query_error_title">We\'re sorry..</string>
+    <string name="cameraLabel">Camera</string>
+    <string name="error_externalStorage">there was a problem accessing your external storage</string>
+    <string name="media_general_error">Sorry there was an error !</string>
+    <string name="video_size_warning">The selected video should be less than 10MB</string>
+    <string name="error_opening_file">There was a problem in selecting the file</string>
+    <string name="file_size_too_long">The selected file is too large Select a new file</string>
+    <string-array name="camera_choices">
+        <item >Take Photo</item>
+        <item >Take Video</item>
+        <item >Choose Photo</item>
+        <item >Choose Video</item>
+    </string-array>
+    <string name="title_activity_recipients">Choose Recipients</string>
+    <string name="empty_recipient_list">Choose some friend first</string>
+    <string name="action_send">send</string>
 </resources>

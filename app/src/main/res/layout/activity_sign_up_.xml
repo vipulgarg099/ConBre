@@ -13,7 +13,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/SignIp_username"
+        android:id="@+id/signUp_username"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/signUp_email"
-        android:layout_below="@+id/SignIp_username"
+        android:layout_below="@+id/signUp_username"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
@@ -36,6 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/signUp_password"
+        android:inputType="textPassword"
         android:layout_below="@+id/signUp_email"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -46,7 +47,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/signUp_confirm_password"
+        android:id="@+id/signUp_confirmPassword"
+        android:inputType="textPassword"
         android:layout_below="@+id/signUp_password"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -54,12 +56,20 @@
         android:textSize="20dp"
         android:hint="@string/confirm_password_hint"/>
 
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/signUp_text"
         android:layout_marginTop="10dp"
         android:id="@+id/signUp_button"
-        android:layout_below="@+id/signUp_confirm_password"
+        android:layout_below="@+id/signUp_confirmPassword"
+        android:layout_centerHorizontal="true"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUp_progressBar"
+        android:layout_alignTop="@+id/signUp_button"
         android:layout_centerHorizontal="true"/>
 </RelativeLayout>
