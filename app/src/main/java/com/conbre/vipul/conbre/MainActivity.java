@@ -16,9 +16,14 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.io.File;
@@ -27,6 +32,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 
@@ -44,6 +50,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     public static final int file_size_limit = 1024*1024*10; //10 MB
 
     protected Uri mMediaUri;
+
 
 
     protected DialogInterface.OnClickListener mDialogListner =
@@ -157,11 +164,12 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        
         Parse.initialize(this, "UurnvcunD45UE1Cu1KaEpaTH5LWm8cvTJu9pGF0c", "5BMgK9hKxinVE2PTCZZ794ooBiI78NgGApl15xxz");
+
         ParseUser currentUser = ParseUser.getCurrentUser();
 
         if(currentUser==null) {
@@ -254,6 +262,15 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             }
             Intent recipientsIntent = new Intent(this, RecipientsActivity.class);
             recipientsIntent.setData(mMediaUri);
+
+            String fileType;
+            if(requestCode == choose_photo_request||requestCode==take_photo_request){
+                fileType = ParseConstants.TYPE_IMAGE;
+            }
+            else{
+                fileType = ParseConstants.TYPE_VIDEO;
+            }
+            recipientsIntent.putExtra(ParseConstants.KEY_FILE_TYPE, fileType);
             startActivity(recipientsIntent);
         }
         else if(resultCode!=RESULT_CANCELED){

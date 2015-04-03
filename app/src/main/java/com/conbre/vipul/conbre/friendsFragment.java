@@ -44,8 +44,7 @@ public class friendsFragment extends ListFragment {
         query.findInBackground(new FindCallback<ParseUser>() {
             @Override
             public void done(List<ParseUser> friends, ParseException e) {
-
-               if(e==null) {
+                   if(e==null) {
                    mFriends = friends;
 
                    String[] userNames = new String[mFriends.size()];
@@ -62,13 +61,13 @@ public class friendsFragment extends ListFragment {
                }
                 else{
                    Log.e(TAG, e.getMessage());
-                   AlertDialog.Builder builder = new AlertDialog.Builder(getListView().getContext());
-                   builder.setMessage(e.getMessage())
-                           .setTitle(getString(R.string.query_error_title))
-                           .setPositiveButton(android.R.string.ok, null);
+                   //AlertDialog.Builder builder = new AlertDialog.Builder(getListView().getContext());
+                   //builder.setMessage(e.getMessage())
+                     //      .setTitle(getString(R.string.query_error_title))
+                       //    .setPositiveButton(android.R.string.ok, null);
 
-                   AlertDialog dialog = builder.create();
-                   dialog.show();
+                   //AlertDialog dialog = builder.create();
+                   //dialog.show();
                }
 
             }

@@ -104,6 +104,7 @@ public class Login_Activity extends ActionBarActivity {
         });
     }
 
+
     private void togglerefresh() {
 
         if(mProgressBar.getVisibility()==View.INVISIBLE) {
